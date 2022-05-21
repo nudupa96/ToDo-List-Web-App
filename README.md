@@ -1,3 +1,6 @@
 # ToDo-List-Web-App
-A ToDo List App built using HTML, CSS and JS for Front End Part
+A ToDo Activity Lists App built 
+
+using HTML, CSS and JS for Front End Part
+
 and Node.js, Express, EJS, MongoDB and Mongoose for Back End Part
