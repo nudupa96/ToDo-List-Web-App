@@ -7,3 +7,7 @@ and Node.js, Express, EJS, MongoDB and Mongoose for Back End Part
 * Users can add a list of Tasks 
 * Created task by the user will be stored in the Database
 * Further features to be added soon! Wait and Watch!!!
+
+
+##LICENSE
+[MIT License] (LICENSE)
