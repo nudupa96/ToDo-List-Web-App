@@ -1,0 +1,33 @@
+<form action="/controllers/home_controller.js" id="task" name="">
+    <label for="description">
+        DESCRIPTION
+    </label>
+    <textarea rows="5" cols="20" id="description" placeholder="What task do you want to perform/add" required>
+    </textarea>
+    <label for="category">
+        Choose a category
+    </label>
+    <select name="" id="category" placeholder="Choose a Category" required>
+        <option value="Personal">Personal</option>
+        <option value="Heavy Work">Heavy Work</option>
+        <option value="Light Work">Light Work</option>
+        <option value="Learning">Learning</option>
+        <option value="Cleaning">Cleaning</option>
+        <option value="Investment">Investment</option>
+        <option value="Spiritual">Spiritual</option>
+        <option value="Health and Wellness">Health and Wellness</option>
+    </select>
+    <label for="">
+        DUE DATE and TIME
+    </label>
+    <input type="datetime-local">
+</form>
+<button type="submit" id="add">
+    <i class="fa-solid fa-calendar-plus"></i>ADD TASK
+</button>
+<button type="submit" id="edit">
+    <i class="fa-solid fa-pen-clip"></i>EDIT TASK
+</button>
+<button type="submit" id="delete">
+    <i class="fa-solid fa-trash-can"></i>DELETE TASK(S)
+</button>
