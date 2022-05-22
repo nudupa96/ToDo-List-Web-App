@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <!-- Link the layout style -->
+        <link rel="stylesheet" href="/css/layout.css">
+        <%- style %>
+    </head>
+    <body>
+        <%- include('_header.ejs') %>
+
+        <!-- Since the body needs to be kept variable do this -->
+        <%- body %>
+
+        <%- include('_footer.ejs') %>
+
+        <%- script %>
+    </body>
+
+</html>
