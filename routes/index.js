@@ -2,10 +2,15 @@
 const express = require('express');
 const router = express.Router();
 
-//link controller and route
+//link home controller and route
 const homeController = require('../controllers/home_controller');
 //specify the route by accessing the controller action
 router.get('/', homeController.home);
+
+//now for accessing update route
+router.use('/tasks', require('./update'));
+
+console.log('Home Controller/Router Loaded!');
 
 //export it to make it available outside
 module.exports = router;
