@@ -1,0 +1,32 @@
+#new-task-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.btn {
+    width: 15%;
+    padding: 10px;
+    margin: 2px;
+    color: white;
+    line-height: 1.5rem;
+    letter-spacing: 0.05rem;
+    border: 0;
+    border-radius: 10px;
+}
+
+#add-btn {
+    background-color: rgb(5, 151, 5);
+}
+
+#edit-btn {
+    background-color: rgb(44, 74, 185);
+}
+
+#delete-btn {
+    background-color: orangered;
+}
+
+.icons {
+    margin-right: 2px;
+}

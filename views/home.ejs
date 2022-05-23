@@ -1,33 +1,60 @@
-<form action="/controllers/home_controller.js" id="task" name="">
-    <label for="description">
-        DESCRIPTION
-    </label>
-    <textarea rows="5" cols="20" id="description" placeholder="What task do you want to perform/add" required>
-    </textarea>
-    <label for="category">
-        Choose a category
-    </label>
-    <select name="" id="category" placeholder="Choose a Category" required>
-        <option value="Personal">Personal</option>
-        <option value="Heavy Work">Heavy Work</option>
-        <option value="Light Work">Light Work</option>
-        <option value="Learning">Learning</option>
-        <option value="Cleaning">Cleaning</option>
-        <option value="Investment">Investment</option>
-        <option value="Spiritual">Spiritual</option>
-        <option value="Health and Wellness">Health and Wellness</option>
-    </select>
-    <label for="">
-        DUE DATE and TIME
-    </label>
-    <input type="datetime-local">
+<link rel="stylesheet" type="text/css" href="/css/home.css">
+<form id="new-task-form" action="/create-task" method="post">
+    <div id="description-container">
+        <label for="description">
+            DESCRIPTION
+        </label>
+        <input type="text" name="taskName" id="description" placeholder="What task do you want to perform/add" required>
+        </input>
+    </div>
+    <div id="category-container">
+        <label for="category">
+            Choose a category
+        </label>
+        <select name="taskCategory" id="category">
+            <option value="">Choose a Category</option>
+            <option value="Personal">Personal</option>
+            <option value="Heavy Work">Heavy Work</option>
+            <option value="Light Work">Light Work</option>
+            <option value="Learning">Learning</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Investment">Investment</option>
+            <option value="Spiritual">Spiritual</option>
+            <option value="Health and Wellness">Health and Wellness</option>
+        </select>
+    </div>
+    <div id="date-container">
+        <label for="date">
+            DUE DATE and TIME
+        </label>
+        <input type="date" id="date" name="taskDate">
+    </div>
 </form>
-<button type="submit" id="add">
-    <i class="fa-solid fa-calendar-plus"></i>ADD TASK
+<button type="submit" id="add-btn" class="btn">
+    <span class="icons">
+        <i class="fa-solid fa-calendar-plus"></i>
+    </span>
+    </i>ADD TASK
 </button>
-<button type="submit" id="edit">
-    <i class="fa-solid fa-pen-clip"></i>EDIT TASK
+<button type="submit" id="edit-btn" class="btn">
+    <span class="icons">
+        <i class="fa-solid fa-pen-clip"></i>
+    </span></i>EDIT TASK
 </button>
-<button type="submit" id="delete">
-    <i class="fa-solid fa-trash-can"></i>DELETE TASK(S)
+<button type="submit" id="delete-btn" class="btn">
+    <span class="icons">
+        <i class="fa-solid fa-trash-can"></i>
+    </span></i>
+    DELETE TASK(S)
 </button>
+<div id="taskListDisplay">
+    <ul>
+        <% for(let i of task_list){ %> 
+            <li>
+                <%= i.taskName %> 
+                <%= i.taskCategory %>
+                <%= i.taskDate %>
+            </li>
+        <% } %>
+    </ul>
+</div>
