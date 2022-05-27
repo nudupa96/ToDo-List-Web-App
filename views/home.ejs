@@ -50,9 +50,8 @@
 <div id="taskListDisplay">
     <ul id="todolist">
         <% for(let i of task_list){ %> 
-            <hr>
-            <li>
-                <input type="checkbox">
+            <li id="task-<%= _id %>" style="border-top: 1px soild grey; border-bottom: 1p solid grey">
+                <input type="checkbox" value="<%= _id %>" name="taskIDs" class="taskIDcheckbox">
                 <label class="strikethrough">
                     <%= i.taskName %> 
                     <%= i.taskCategory %>
@@ -66,7 +65,6 @@
                     <% } %> 
                 </label>
             </li>
-            <hr>
         <% } %>
     </ul>
 </div>
