@@ -9,7 +9,9 @@ router.get('/', homeController.home);
 
 router.post('/create-task', homeController.addtask);//define route and controller for adding a task
 
-router.get('/delete-task', homeController.deletetask);//define route and controller for deleting a task
+//post is preferred for deleting as we are sending this data through a url, and 
+//it'll be exposed if get method is used
+router.post('/delete-task', homeController.deletetasks);//define route and controller for deleting a task
 
 console.log('Home Controller/Router Loaded!');
 

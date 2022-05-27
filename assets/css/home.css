@@ -66,3 +66,11 @@ input {
 #date-container, #category-container {
     width: 50%;
 }
+
+input {
+    padding: 10px;
+}
+
+select {
+    padding: 10px;
+}

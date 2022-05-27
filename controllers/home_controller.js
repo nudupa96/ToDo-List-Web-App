@@ -36,16 +36,6 @@ module.exports.addtask = function(req, res){
     });
 };
 
-module.exports.deletetask = function(req, res){
-    //delete w.r.t id of the query
-    let id = req.query.id;
-
-    Task.findByIdAndDelete(id, function(err){
-        if(err)
-        {
-            console.log('Error in deleting task from DB');
-            return;
-        }
-        return res.redirect('back');
-    });
+module.exports.deletetasks = function(req, res){
+    //many changes needed here
 };
