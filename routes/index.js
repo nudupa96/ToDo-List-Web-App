@@ -7,12 +7,11 @@ const homeController = require('../controllers/home_controller');
 //specify the route by accessing the controller action
 router.get('/', homeController.home);
 
-router.post('/create-task', homeController.addtask);
+router.post('/create-task', homeController.addtask);//define route and controller for adding a task
 
-router.get('/delete-task', homeController.deletetask);
+router.get('/delete-task', homeController.deletetask);//define route and controller for deleting a task
 
-//now for accessing update route
-router.use('/tasks', require('./update'));
+router.use('/update-task', require('./update'));//define route and controller for updating a task
 
 console.log('Home Controller/Router Loaded!');
 

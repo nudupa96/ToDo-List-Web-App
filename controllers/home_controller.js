@@ -1,19 +1,19 @@
 //require the DB which is store in task.js
 const Task = require("../models/task");
 
-// /home will render this action
+// /home will render this action(read)
 module.exports.home = function(req, res){
     //find task(data) in DB and fetch it here
     Task.find({}, function(err, tasks){
-        if(!err)
+        if(err)
         {
-            return res.render('home', {
-                title: "My TODO List",
-                task_list: tasks 
-            });
+            console.log('Error in fetching contact from DB');
+            return;
         }
-        console.log('Error in fetching contact from DB');
-        return;
+        return res.render('home', {
+            title: "My TODO List",
+            task_list: tasks 
+        });
     });
 };
 
@@ -25,14 +25,14 @@ module.exports.addtask = function(req, res){
         taskCategory: req.body.taskCategory,
         taskDate: req.body.taskDate 
     }, 
-    function(err, newTask){
-        if(!err)
+    function(err, newtask){
+        if(err)
         {
-            console.log('######', newTask);
-            return res.redirect('back');
+            console.log('Error in creating a task');
+            return;
         }
-        console.log('Error in creating a task');
-        return;
+        console.log('######', newtask);
+        return res.redirect('back');
     });
 };
 
@@ -41,11 +41,11 @@ module.exports.deletetask = function(req, res){
     let id = req.query.id;
 
     Task.findByIdAndDelete(id, function(err){
-        if(!err)
+        if(err)
         {
-            return res.redirect('back');
+            console.log('Error in deleting task from DB');
+            return;
         }
-        console.log('Error in deleting task from DB');
-        return;
+        return res.redirect('back');
     });
 };

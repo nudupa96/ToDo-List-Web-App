@@ -30,3 +30,11 @@
 .icons {
     margin-right: 2px;
 }
+
+.grey-icons {
+    color: lightgray;
+}
+
+#todolist li {
+    list-style: none;
+}

@@ -6,6 +6,10 @@ const expressLayouts = require('express-ejs-layouts');
 //to read data input from form
 const bodyParser = require('body-parser');
 
+//for different date format - as required in the project
+const moment = require('moment');
+const d = new Date('2022-03-03');
+
 //link the mongoose lib for the db
 const db = require('./config/mongoose');
 
@@ -28,7 +32,7 @@ var taskList = [
     {
         taskName: "Getting Vegetables",
         taskCategory: "Personal",
-        taskDate: new Date('2022-03-03')
+        taskDate: moment(d).format('MMMM d, YYYY')
     } 
 ]
 

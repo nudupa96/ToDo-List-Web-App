@@ -25,35 +25,45 @@
     </div>
     <div id="date-container">
         <label for="date">
-            DUE DATE and TIME
+            DUE DATE
         </label>
         <input type="date" id="date" name="taskDate">
     </div>
+    <button type="submit" id="add-btn" class="btn">
+        <span class="icons">
+            <i class="fa-solid fa-calendar-plus"></i>
+        </span>
+        ADD TASK
+    </button>
 </form>
-<button type="submit" id="add-btn" class="btn">
-    <span class="icons">
-        <i class="fa-solid fa-calendar-plus"></i>
-    </span>
-    </i>ADD TASK
-</button>
+
 <button type="submit" id="edit-btn" class="btn">
     <span class="icons">
         <i class="fa-solid fa-pen-clip"></i>
-    </span></i>EDIT TASK
+    </span>
+    EDIT TASK
 </button>
-<button type="submit" id="delete-btn" class="btn">
+<button action="/delete-task" type="submit" id="delete-btn" class="btn">
     <span class="icons">
         <i class="fa-solid fa-trash-can"></i>
-    </span></i>
+    </span> 
     DELETE TASK(S)
 </button>
 <div id="taskListDisplay">
-    <ul>
+    <ul id="todolist">
         <% for(let i of task_list){ %> 
             <li>
+                <input type="checkbox">
                 <%= i.taskName %> 
                 <%= i.taskCategory %>
-                <%= i.taskDate %>
+                <span class="grey-icons">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </span>
+                <% if( i.taskDate == null) { %>
+                    NO DEADLINE
+                <% } else{ %> 
+                    <%= i.taskDate %>
+                <% } %> 
             </li>
         <% } %>
     </ul>
