@@ -36,13 +36,6 @@
         ADD TASK
     </button>
 </form>
-
-<button type="submit" id="edit-btn" class="btn">
-    <span class="icons">
-        <i class="fa-solid fa-pen-clip"></i>
-    </span>
-    EDIT TASK
-</button>
 <button action="/delete-task" type="submit" id="delete-btn" class="btn">
     <span class="icons">
         <i class="fa-solid fa-trash-can"></i>
@@ -52,19 +45,23 @@
 <div id="taskListDisplay">
     <ul id="todolist">
         <% for(let i of task_list){ %> 
+            <hr>
             <li>
                 <input type="checkbox">
-                <%= i.taskName %> 
-                <%= i.taskCategory %>
-                <span class="grey-icons">
-                    <i class="fa-solid fa-calendar-days"></i>
-                </span>
-                <% if( i.taskDate == null) { %>
-                    NO DEADLINE
-                <% } else{ %> 
-                    <%= i.taskDate %>
-                <% } %> 
+                <label class="strikethrough">
+                    <%= i.taskName %> 
+                    <%= i.taskCategory %>
+                    <span class="grey-icons">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <% if( i.taskDate == null) { %>
+                        NO DEADLINE
+                    <% } else{ %> 
+                        <%= i.taskDate %>
+                    <% } %> 
+                </label>
             </li>
+            <hr>
         <% } %>
     </ul>
 </div>

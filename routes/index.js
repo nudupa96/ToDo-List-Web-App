@@ -11,8 +11,6 @@ router.post('/create-task', homeController.addtask);//define route and controlle
 
 router.get('/delete-task', homeController.deletetask);//define route and controller for deleting a task
 
-router.use('/update-task', require('./update'));//define route and controller for updating a task
-
 console.log('Home Controller/Router Loaded!');
 
 //export it to make it available outside
