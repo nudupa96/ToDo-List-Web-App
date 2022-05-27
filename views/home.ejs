@@ -42,7 +42,7 @@
         ADD TASK
     </button>
 </form>
-<button type="submit" id="delete-btn" class="btn">
+<button type="submit" id="delete-btn" class="btn" onclick="performDeleteOperation()">
     <span class="icons">
         <i class="fa-solid fa-trash-can"></i>
     </span>
@@ -51,15 +51,15 @@
 <div id="taskListDisplay">
     <ul id="todolist">
         <% for(let i of task_list){ %>
-            <li id="task-<%= _id %>" style="border-top: 1px soild grey; border-bottom: 1p solid grey">
-                <input type="checkbox" value="<%= _id %>" name="taskIDs" class="taskIDcheckbox">
+            <li id="task-<%= i._id %>" style="border-top: 1px soild grey; border-bottom: 1p solid grey">
+                <input type="checkbox" value="<%= i._id %>" name="taskIDs" class="taskIDcheckbox">
                 <label class="strikethrough">
                     <%= i.taskName %>
                         <%= i.taskCategory %>
                             <span class="grey-icons">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </span>
-                            <% if( i.taskDate==null) { %>
+                            <% if( i.taskDate == null) { %>
                                 NO DEADLINE
                                 <% } else{ %>
                                     <%= i.taskDate %>
@@ -75,5 +75,4 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
 </script>
-
 <script src="/js/delete_script.js"></script>

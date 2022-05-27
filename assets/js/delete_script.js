@@ -10,7 +10,7 @@ function performDeleteOperation() {
         IDs.push(box.value);
     });
 
-    //AJAX cal through the server - Note the syntax
+    //AJAX call through the server - Note the syntax
     $.ajax({
         method: 'POST',
         url: '/delete-task',
