@@ -29,6 +29,7 @@ function performDeleteOperation() {
                     $(`#task-${task}`).remove();
                 })
             }
+            //if it is a single element then remove from DOM
             else {
                 $(`#task-${taskIDs}`).remove();
             }
