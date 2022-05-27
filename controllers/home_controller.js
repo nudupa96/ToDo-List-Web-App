@@ -37,5 +37,21 @@ module.exports.addtask = function(req, res){
 };
 
 module.exports.deletetasks = function(req, res){
-    //many changes needed here
+    let taskIDs = req.body['taskIDs[]'];
+    //here req.body.taskIDs was not used as taskIDs is an array
+
+    //delete many mongose query
+    //find _id in taskIDs and then the callback function
+    Task.deleteMany( {_id: { $in: taskIDs} }, function(err){
+        if(err) {
+            //returning a JSON response for 404 status code
+            return res.status(404).json({
+                error: err
+            })
+        }
+
+        return res.status(200).json({
+            taskIDs: taskIDs
+        })
+    });
 };
